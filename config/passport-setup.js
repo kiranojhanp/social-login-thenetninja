@@ -23,7 +23,6 @@ passport.use(
       callbackURL: "/auth/google/redirect",
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
       // check if user already exists
       User.findOne({ googleId: profile.id })
         .then((currentUser) => {
